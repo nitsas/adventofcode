@@ -23,6 +23,22 @@ export default class Heap {
   // A simple comparison function for a min-heap:
   static MIN_FIRST = (a, b) => a <= b;
 
+  // Initialize a heap from an iterable. Default: max heap.
+  //
+  // Heapifies the iterable in O(log(n)) time!
+  //
+  // @param {Object} iterable - An object that works with Array.prototype.from().
+  // @param {Function} above -
+  //   The function to use to compare two items a, b inside the heap.
+  //   Return true if the 1st element should be "above" the 2nd in the heap.
+  // @returns {Heap}
+  static from(iterable, above = this.constructor.MAX_FIRST) {
+    const heap = new Heap(above);
+    heap._heap = Array.from(iterable);
+    heap._heapify();
+    return heap;
+  }
+
   // Initialize a max or min heap. Default: max heap.
   //
   // @param {Function} above -
@@ -107,5 +123,12 @@ export default class Heap {
       [this._heap[index], this._heap[leftChildIndex]] = [leftChild, item];
       this._bubbleDown(leftChildIndex);
     }
+  }
+
+  _heapify() {
+    const halfPoint = Math.floor((this.length - 1) / 2);
+    for (let i = halfPoint; i >= 0; i--) {
+      this._bubbleDown(i);
+    };
   }
 };
