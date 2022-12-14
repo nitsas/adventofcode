@@ -91,7 +91,12 @@ export default class Heap {
   }
 
   // peek() { return this._heap[0]; }
+
+  // @returns {Number}
   get length() { return this._heap.length; }
+
+  // @returns {String}
+  toString() { return `Heap(${this.length}) [${this._heap.toString()}]`; }
 
   _bubbleUp(index) {
     if (index <= 0) return;
