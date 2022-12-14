@@ -2,7 +2,7 @@
 
 import * as readline from 'node:readline/promises';
 import { stdin, stdout } from 'node:process';
-import Heap from './heap.mjs';
+import Heap from '../datastructs/heap.mjs';
 
 const input = readline.createInterface({ input: stdin });
 
