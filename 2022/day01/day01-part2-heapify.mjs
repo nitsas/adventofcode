@@ -20,5 +20,5 @@ for await (const line of input) {
 };
 
 const heap = Heap.from(elfCalories);
-const topThree = [elfCalories.pop(), elfCalories.pop(), elfCalories.pop()];
+const topThree = [heap.pop(), heap.pop(), heap.pop()];
 console.log(sum(topThree));
