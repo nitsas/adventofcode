@@ -1,4 +1,5 @@
 // Usage: cat input.txt | node dayXX.mjs
+// node v19.2.0
 //
 // Set.prototype.push() and Set.prototype.has() take O(1) time,
 // so the total solution takes O(n * k) time and O(k) space, where:

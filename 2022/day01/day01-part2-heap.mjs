@@ -1,4 +1,5 @@
 // Usage: cat input.txt | node dayXX.mjs
+// node v19.2.0
 
 import * as readline from 'node:readline/promises';
 import { stdin, stdout } from 'node:process';
